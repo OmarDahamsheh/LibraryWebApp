@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import { Navbar } from './Layouts/NavbarAndFooter/Navbar';
+import { Footer } from './Layouts/NavbarAndFooter/Footer';
+import { HomePage } from './Layouts/HomePage/HomePage';
+import { SearchBooksPage } from './Layouts/SearchBooksPage/SearchBooksPage';
+import { Pagination } from './Layouts/Utils/Pagination';
+import { Route } from 'react-router-dom';
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div> {/*We added a div because JSX expressions must have one parent element*/}
+      <Navbar />
+      <Route path='/'>
+        <HomePage />
+      </Route>
+      <Route path='/search'>
+        <SearchBooksPage />
+      </Route>
+      <Footer />
     </div>
   );
 }
