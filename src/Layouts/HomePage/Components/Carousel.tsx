@@ -2,6 +2,7 @@ import { ReturnBook } from "./ReturnBook";
 import { useState, useEffect } from "react";
 import BookModel from "../../../Models/BookModel";
 import { SpinnerLoading } from "../../Utils/SpinnerLoading";
+import { Link } from "react-router-dom";
 
 export const Carousel = () => {
 
@@ -107,8 +108,9 @@ export const Carousel = () => {
                     <ReturnBook book={books[7]} key={books[7].id} />
                 </div>
             </div>
+
             <div className="homepage-carousel-title mt-3">
-                <a className="btn btn-outline-secondary btn-lg" href="#">View More</a>
+                <Link className="btn btn-outline-secondary btn-lg" href="#" to="/search">View More</Link>
             </div>
         </div>
     );
