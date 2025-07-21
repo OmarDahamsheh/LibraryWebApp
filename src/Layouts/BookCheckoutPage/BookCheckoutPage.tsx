@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import BookModel from "../../Models/BookModel";
 import { SpinnerLoading } from "../Utils/SpinnerLoading";
 import { json } from "stream/consumers";
+import { StarsReview } from "../Utils/StarsReview";
 
 export const BookCheckoutPage = () => {
     const [book, setBook] = useState<BookModel>();
@@ -62,14 +63,15 @@ export const BookCheckoutPage = () => {
                         ?
                         <img src={book?.img} width='226' height='349' alt="book" />
                         :
-                        <img src={ require('./../../Images/BooksImages/book-luv2code-1000.png')} width='226' height='349' alt="book" />
-                        }
+                        <img src={require('./../../Images/BooksImages/book-luv2code-1000.png')} width='226' height='349' alt="book" />
+                    }
                 </div>
                 <div className="col-4 col-md-4 container">
                     <div className="ml-2">
                         <h2>{book?.title}</h2>
                         <h5 className="text-primary">{book?.author}</h5>
-                        <p className="lead">{ book?.description}</p>
+                        <p className="lead">{book?.description}</p>
+                        <StarsReview rating={4.5} size={32} />
                     </div>
                 </div>
                 <hr />
@@ -106,14 +108,15 @@ export const BookCheckoutPage = () => {
                         ?
                         <img src={book?.img} width='226' height='349' alt="book" />
                         :
-                        <img src={ require('./../../Images/BooksImages/book-luv2code-1000.png')} width='226' height='349' alt="book" />
-                        }
+                        <img src={require('./../../Images/BooksImages/book-luv2code-1000.png')} width='226' height='349' alt="book" />
+                    }
                 </div>
                 <div className="mt4">
                     <div className="ml-2">
                         <h2>{book?.title}</h2>
                         <h5 className="text-primary">{book?.author}</h5>
-                        <p className="lead">{ book?.description}</p>
+                        <p className="lead">{book?.description}</p>
+                        <StarsReview rating={4.5} size={32} />
                     </div>
                 </div>
             </div>
