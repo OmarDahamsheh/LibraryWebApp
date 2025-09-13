@@ -30,6 +30,7 @@ export const App = () => {
             <Route path="/checkout/:bookId">
               <BookCheckoutPage/>
             </Route>
+            
           </Switch>
         </div>
         <Footer />
